@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Guasch's Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index-styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="content-left">
+            <h1>Andrew Guasch</h1>
+            <p>Full Stack Developer, Front-end Developer, CSS Expert, UX/UI Design, Algorithm Development and AI Integration</p>
+            <div class="skills">
+                <div class="skill">AI</div>
+                <div class="skill">UX/UI</div>
+                <div class="skill">Full-Stack</div>
+                <div class="skill">Front-End</div>
+                <div class="skill">CSS</div>
+                <div class="skill">ALGORITHM DEV</div>
+            </div>
+        </div>
+        <div class="content-right">
+            <img src="{{ url_for('static', filename='images/andrew-developer.png') }}" alt="Andrew Guasch">
+        </div>
+    </div>
+</body>
+</html>
