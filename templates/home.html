@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Andrew R. Guasch | Data-Driven Full Stack Developer</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+  />
+  
+  <!-- Custom Styles (See below) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
+
+  <!-- Optional: GSAP for Animations -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script> -->
+</head>
+<body>
+
+  <!-- Navigation (Sticky Top) -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand font-weight-bold" href="#">Andrew Guasch</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarToggler"
+        aria-controls="navbarToggler"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navigation -->
+
+  <!-- Hero Section -->
+  <header class="hero-section d-flex align-items-center" id="hero">
+    <div class="container text-center">
+      <h1 class="display-4 font-weight-bold">Andrew R. Guasch</h1>
+      <p class="lead hero-text">
+        Data-Driven Full Stack Developer | AI &amp; Cloud Enthusiast | SEO Expert
+      </p>
+      <a href="#portfolio" class="btn btn-primary btn-lg mt-3">View My Work</a>
+    </div>
+  </header>
+  <!-- End Hero Section -->
+
+  <!-- About Section -->
+  <section class="py-5" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mb-4">
+          <h2 class="section-title">About Me</h2>
+          <p>
+            I'm on a mission to equip businesses with cutting-edge, cost-effective
+            web technologies—particularly focusing on data-driven development and AI
+            integration. By optimizing digital presence and harnessing advanced analytics,
+            I help small businesses thrive and strengthen local economies.
+          </p>
+          <p>
+            My expertise extends to UX/UI design with subtle GSAP animations, ensuring
+            that every user interface is both intuitive and visually engaging.
+          </p>
+          <p>
+            As the founder of <strong>Authentic Dynamics</strong>, I've helped numerous
+            organizations—from local shops to larger enterprises—transform their
+            digital footprint, grow web traffic, and improve conversion rates.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <img
+            src="https://via.placeholder.com/600x400"
+            alt="Andrew Guasch profile"
+            class="img-fluid rounded shadow-sm"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End About Section -->
+
+  <!-- Services Section -->
+  <section class="py-5 bg-light" id="services">
+    <div class="container">
+      <h2 class="section-title text-center">Services & Specialties</h2>
+      <p class="text-center mb-5">
+        I specialize in building impactful solutions driven by data, user-centric
+        design, and modern web technologies.
+      </p>
+      <div class="row">
+        <!-- Service 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="service-box p-4 shadow-sm">
+            <h4 class="font-weight-bold">AI-Driven App Development</h4>
+            <p>
+              Building advanced data-parsing and summarization platforms (e.g., ScribeInt,
+              ExecTrack) to deliver next-gen user experiences.
+            </p>
+          </div>
+        </div>
+        <!-- Service 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="service-box p-4 shadow-sm">
+            <h4 class="font-weight-bold">UX/UI & GSAP Animations</h4>
+            <p>
+              Crafting seamless and visually appealing interfaces that engage users
+              and reinforce brand identity.
+            </p>
+          </div>
+        </div>
+        <!-- Service 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="service-box p-4 shadow-sm">
+            <h4 class="font-weight-bold">Cloud & Infrastructure</h4>
+            <p>
+              Expertise in Nginx/Apache, Google Cloud, and AWS for secure, scalable
+              deployments and robust performance.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Service 4 -->
+        <div class="col-md-4 mb-4">
+          <div class="service-box p-4 shadow-sm">
+            <h4 class="font-weight-bold">SEO & Google My Business</h4>
+            <p>
+              Growing organic search impressions from hundreds to hundreds of thousands
+              through on-page SEO, mobile optimization, and Google My Business management.
+            </p>
+          </div>
+        </div>
+        <!-- Service 5 -->
+        <div class="col-md-4 mb-4">
+          <div class="service-box p-4 shadow-sm">
+            <h4 class="font-weight-bold">Google Ads & Marketing</h4>
+            <p>
+              Personalized campaigns that target the right audience, maximize ROI, and
+              continuously improve via analytics.
+            </p>
+          </div>
+        </div>
+        <!-- Service 6 (optional) -->
+        <div class="col-md-4 mb-4">
+          <div class="service-box p-4 shadow-sm">
+            <h4 class="font-weight-bold">Data Analytics & Automation</h4>
+            <p>
+              Leveraging data-driven insights for business growth, process
+              automation, and strategic decision-making.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Services Section -->
+
+  <!-- Achievements & Partnerships -->
+  <section class="py-5" id="achievements">
+    <div class="container">
+      <h2 class="section-title text-center">Achievements & Partnerships</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <ul>
+            <li>
+              <strong>Partnered with Keller-Williams of Harrisburg</strong> to optimize
+              digital presence & lead acquisition.
+            </li>
+            <li>
+              Member of the <strong>West Shore Chamber of Commerce</strong>, fueling
+              business development and community growth.
+            </li>
+            <li>
+              Collaborations with <strong>PA Unity Cup</strong> & 
+              <strong>PushPlay Performance LLC</strong> to drive brand visibility and 
+              engagement.
+            </li>
+            <li>
+              <strong>Curator for UIVerse.com</strong>, judging and approving
+              UI/UX submissions.
+            </li>
+            <li>
+              Boosted SEO from hundreds to <strong>hundreds of thousands</strong> of
+              annual impressions for select clients.
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6 mb-4">
+          <img
+            src="https://via.placeholder.com/600x350"
+            alt="Achievements illustration"
+            class="img-fluid rounded shadow-sm"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Achievements & Partnerships -->
+
+  <!-- Experience Section -->
+  <section class="py-5 bg-light" id="experience">
+    <div class="container">
+      <h2 class="section-title text-center">Professional Experience</h2>
+      <div class="experience-item mt-4">
+        <h4>Authentic Dynamics | Founder & Lead Engineer</h4>
+        <ul>
+          <li>
+            Spearheading AI-driven product development (e.g., ScribeInt for 
+            congressional diarization, ExecTrack for executive order summaries).
+          </li>
+          <li>
+            Implementing advanced SEO, Google My Business setups, and Ads optimization
+            for diverse clients.
+          </li>
+          <li>
+            Managing cloud infrastructure (Google Cloud, AWS) to ensure reliable,
+            scalable deployments.
+          </li>
+        </ul>
+      </div>
+      <!-- Additional roles or experiences can be added here -->
+    </div>
+  </section>
+  <!-- End Experience Section -->
+
+  <section class="py-5" id="portfolio">
+    <div class="container">
+      <h2 class="section-title text-center">Portfolio &amp; Projects</h2>
+      <p class="text-center mb-5">
+        A selection of AI, data-driven, and small-business solutions I've launched.
+      </p>
+  
+      <!-- Row 1 -->
+      <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-4 d-flex align-items-stretch mb-4">
+          <div class="card h-100 d-flex flex-column portfolio-card">
+            <img
+              class="card-img-top"
+              src="https://via.placeholder.com/600x400"
+              alt="ScribeInt Thumbnail"
+            />
+            <div class="card-body flex-grow-1">
+              <h5 class="card-title">ScribeInt</h5>
+              <p class="card-text">
+                AI-driven Congressional hearing diarization &amp; unbiased summaries.
+              </p>
+            </div>
+            <div class="card-footer bg-white border-0">
+              <button class="btn btn-outline-primary" disabled>Coming Soon</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Card 2 -->
+        <div class="col-md-4 d-flex align-items-stretch mb-4">
+          <div class="card h-100 d-flex flex-column portfolio-card">
+            <img
+              class="card-img-top"
+              src="https://via.placeholder.com/600x400"
+              alt="ExecTrack Thumbnail"
+            />
+            <div class="card-body flex-grow-1">
+              <h5 class="card-title">ExecTrack</h5>
+              <p class="card-text">
+                Executive Order parsing &amp; public scoring app, highlighting
+                potential impact on laws and policies.
+              </p>
+            </div>
+            <div class="card-footer bg-white border-0">
+              <button class="btn btn-outline-primary" disabled>Coming Soon</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Card 3 -->
+        <div class="col-md-4 d-flex align-items-stretch mb-4">
+          <div class="card h-100 d-flex flex-column portfolio-card">
+            <img
+              class="card-img-top"
+              src="https://via.placeholder.com/600x400"
+              alt="GA Event Tracker Thumbnail"
+            />
+            <div class="card-body flex-grow-1">
+              <h5 class="card-title">Open-Source: GA Event Tracker</h5>
+              <p class="card-text">
+                A lightweight JS library for improved Google Analytics event tracking
+                and streamlined data analysis.
+              </p>
+            </div>
+            <div class="card-footer bg-white border-0">
+              <a href="#" class="btn btn-outline-primary">View on GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Row 1 -->
+  
+      <!-- Row 2 -->
+      <div class="row">
+        <!-- Card 4 -->
+        <div class="col-md-4 d-flex align-items-stretch mb-4">
+          <div class="card h-100 d-flex flex-column portfolio-card">
+            <img
+              class="card-img-top"
+              src="https://via.placeholder.com/600x400"
+              alt="GSAP Nav Animations Thumbnail"
+            />
+            <div class="card-body flex-grow-1">
+              <h5 class="card-title">Open-Source: GSAP Nav Animations</h5>
+              <p class="card-text">
+                A small GSAP-driven nav animation package that enhances user
+                interactions with smooth transitions.
+              </p>
+            </div>
+            <div class="card-footer bg-white border-0">
+              <a href="#" class="btn btn-outline-primary">View on GitHub</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Card 5 -->
+        <div class="col-md-4 d-flex align-items-stretch mb-4">
+          <div class="card h-100 d-flex flex-column portfolio-card">
+            <img
+              class="card-img-top"
+              src="https://via.placeholder.com/600x400"
+              alt="Local Business Solutions Thumbnail"
+            />
+            <div class="card-body flex-grow-1">
+              <h5 class="card-title">Local Business Solutions</h5>
+              <p class="card-text">
+                Various digital transformations for local shops, restaurants,
+                and community ventures (TeachingJobsinPA, Tablae, etc.).
+              </p>
+            </div>
+            <div class="card-footer bg-white border-0">
+              <a href="#" class="btn btn-outline-primary">Explore Case Studies</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- (Optional) Add more cards as needed -->
+      </div>
+      <!-- End Row 2 -->
+    </div>
+  </section>
+  
+  
+
+  <!-- Education Section -->
+  <section class="py-5 bg-light" id="education">
+    <div class="container">
+      <h2 class="section-title text-center">Education & Training</h2>
+      <ul class="mt-4">
+        <li>Harvard University | CS50's Web Programming with Python & JavaScript</li>
+        <li>Harvard University | CS50's Mobile App Development with React Native</li>
+        <li>General Assembly | JavaScript Remote - Front-End Development Course</li>
+        <li>Google | Agile Project Management</li>
+        <li>Google | Foundations of Digital Marketing & E-Commerce</li>
+        <li>Google | Foundations of UX Design</li>
+        <!-- Add any newer or AI-focused coursework/certifications if applicable -->
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-5" id="contact">
+    <div class="container">
+      <h2 class="section-title text-center">Contact Me</h2>
+      <p class="text-center mb-5">
+        Ready to supercharge your digital presence? Let's collaborate to drive
+        measurable results for your business.
+      </p>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <p><strong>Email:</strong> <a href="mailto:andrewguasch@authenticdynamics.com">andrewguasch@authenticdynamics.com</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/AndrewGuadi" target="_blank">AndrewGuadi</a></p>
+          <p>
+            <strong>LinkedIn:</strong> 
+            <a href="https://www.linkedin.com/in/andrew-guasch-444603287" target="_blank">
+              Connect with me
+            </a>
+          </p>
+          <p>
+            Or fill out my 
+            <a href="https://www.authenticdynamics.com/contactus#contact" target="_blank">
+              contact form @ Authentic Dynamics
+            </a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Contact Section -->
+
+  <!-- Footer -->
+  <footer class="py-4 bg-dark text-white text-center">
+    <div class="container">
+      <p class="mb-0">
+        &copy; <span id="year"></span> Andrew R. Guasch | Authentic Dynamics
+      </p>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- jQuery, Popper.js, and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.3/umd.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Dynamically update year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script>
+    // Example: Fade in each card from below as it scrolls into view
+    document.addEventListener("DOMContentLoaded", function() {
+      gsap.from(".portfolio-card", {
+        scrollTrigger: ".portfolio-card", // if using ScrollTrigger plugin
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2
+      });
+    });
+  </script>
+  
+</body>
+</html>
