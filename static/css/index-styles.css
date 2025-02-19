@@ -120,6 +120,30 @@ a:hover {
 }
 
 /* ----------------------------------------------------------
+   7-a. Skills (added after) 
+----------------------------------------------------------- */
+
+/* Skills Section Styles */
+#skills {
+    background-color: #f8f9fa; /* Or adjust to your preference */
+    padding: 60px 0;
+  }
+  #skills h2.section-title {
+    margin-bottom: 40px;
+  }
+  #skills h4 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  #skills p {
+    color: #555;
+    font-size: 1rem;
+  }
+  
+
+
+/* ----------------------------------------------------------
    7. Service Boxes (Neumorphism + Dark Card)
 ----------------------------------------------------------- */
 .service-box {
