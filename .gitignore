@@ -1,3 +1,6 @@
 myEnv/
 instance/
 migrations/
+
+*.png
+images/

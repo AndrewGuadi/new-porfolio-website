@@ -86,7 +86,7 @@
         </div>
         <div class="col-lg-6">
           <img
-            src="https://via.placeholder.com/600x400"
+            src="{{ url_for('static', filename='images/andrewguasch.jpeg') }}"
             alt="Andrew Guasch profile"
             class="img-fluid rounded shadow-sm"
           />
@@ -204,7 +204,7 @@
         </div>
         <div class="col-md-6 mb-4">
           <img
-            src="https://via.placeholder.com/600x350"
+            src="{{ url_for('static', filename='images/achievements.png') }}"
             alt="Achievements illustration"
             class="img-fluid rounded shadow-sm"
           />
@@ -249,16 +249,16 @@
   
       <!-- Row 1 -->
       <div class="row">
-        <!-- Card 1 -->
+        <!-- Card 1: Scribient -->
         <div class="col-md-4 d-flex align-items-stretch mb-4">
           <div class="card h-100 d-flex flex-column portfolio-card">
             <img
               class="card-img-top"
-              src="https://via.placeholder.com/600x400"
-              alt="ScribeInt Thumbnail"
+              src="{{ url_for('static', filename='images/scribient.png') }}"
+              alt="Scribient Thumbnail"
             />
             <div class="card-body flex-grow-1">
-              <h5 class="card-title">ScribeInt</h5>
+              <h5 class="card-title">Scribient</h5>
               <p class="card-text">
                 AI-driven Congressional hearing diarization &amp; unbiased summaries.
               </p>
@@ -269,19 +269,18 @@
           </div>
         </div>
   
-        <!-- Card 2 -->
+        <!-- Card 2: ExecTrack -->
         <div class="col-md-4 d-flex align-items-stretch mb-4">
           <div class="card h-100 d-flex flex-column portfolio-card">
             <img
               class="card-img-top"
-              src="https://via.placeholder.com/600x400"
+              src="{{ url_for('static', filename='images/ExecTrack.png') }}"
               alt="ExecTrack Thumbnail"
             />
             <div class="card-body flex-grow-1">
               <h5 class="card-title">ExecTrack</h5>
               <p class="card-text">
-                Executive Order parsing &amp; public scoring app, highlighting
-                potential impact on laws and policies.
+                Executive Order parsing &amp; public scoring app, highlighting potential impact on laws and policies.
               </p>
             </div>
             <div class="card-footer bg-white border-0">
@@ -290,23 +289,22 @@
           </div>
         </div>
   
-        <!-- Card 3 -->
+        <!-- Card 3: MASTER Teaching Scraper -->
         <div class="col-md-4 d-flex align-items-stretch mb-4">
           <div class="card h-100 d-flex flex-column portfolio-card">
             <img
               class="card-img-top"
-              src="https://via.placeholder.com/600x400"
-              alt="GA Event Tracker Thumbnail"
+              src="{{ url_for('static', filename='images/teaching-scraper.png') }}"
+              alt="MASTER Teaching Scraper Thumbnail"
             />
             <div class="card-body flex-grow-1">
-              <h5 class="card-title">Open-Source: GA Event Tracker</h5>
+              <h5 class="card-title">MASTER Teaching Scraper</h5>
               <p class="card-text">
-                A lightweight JS library for improved Google Analytics event tracking
-                and streamlined data analysis.
+                AI-driven web scraper that aggregates and categorizes job listings from 500+ PA public school districts, filtering for degree-required positions for educators.
               </p>
             </div>
             <div class="card-footer bg-white border-0">
-              <a href="#" class="btn btn-outline-primary">View on GitHub</a>
+              <a href="https://github.com/AndrewGuadi/MASTER-teaching-scraper" class="btn btn-outline-primary" target="_blank">View on GitHub</a>
             </div>
           </div>
         </div>
@@ -315,40 +313,38 @@
   
       <!-- Row 2 -->
       <div class="row">
-        <!-- Card 4 -->
+        <!-- Card 4: OrderNow -->
         <div class="col-md-4 d-flex align-items-stretch mb-4">
           <div class="card h-100 d-flex flex-column portfolio-card">
             <img
               class="card-img-top"
-              src="https://via.placeholder.com/600x400"
-              alt="GSAP Nav Animations Thumbnail"
+              src="{{ url_for('static', filename='images/order-now.png') }}"
+              alt="OrderNow Thumbnail"
             />
             <div class="card-body flex-grow-1">
-              <h5 class="card-title">Open-Source: GSAP Nav Animations</h5>
+              <h5 class="card-title">OrderNow</h5>
               <p class="card-text">
-                A small GSAP-driven nav animation package that enhances user
-                interactions with smooth transitions.
+                An AI-powered chatbot for restaurants that enables menu uploads, customizable conversational ordering (with voice interaction), secure payments, and seamless backend integration.
               </p>
             </div>
             <div class="card-footer bg-white border-0">
-              <a href="#" class="btn btn-outline-primary">View on GitHub</a>
+              <button class="btn btn-outline-primary" disabled>Coming Soon</button>
             </div>
           </div>
         </div>
   
-        <!-- Card 5 -->
+        <!-- Card 5: Local Business Solutions -->
         <div class="col-md-4 d-flex align-items-stretch mb-4">
           <div class="card h-100 d-flex flex-column portfolio-card">
             <img
               class="card-img-top"
-              src="https://via.placeholder.com/600x400"
+              src="{{ url_for('static', filename='images/business-solutions.png') }}"
               alt="Local Business Solutions Thumbnail"
             />
             <div class="card-body flex-grow-1">
               <h5 class="card-title">Local Business Solutions</h5>
               <p class="card-text">
-                Various digital transformations for local shops, restaurants,
-                and community ventures (TeachingJobsinPA, Tablae, etc.).
+                Various digital transformations for local shops, restaurants, and community ventures (TeachingJobsinPA, Tablae, etc.).
               </p>
             </div>
             <div class="card-footer bg-white border-0">
@@ -362,6 +358,7 @@
       <!-- End Row 2 -->
     </div>
   </section>
+  
   
   
 
