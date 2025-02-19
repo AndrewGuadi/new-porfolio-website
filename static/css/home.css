@@ -89,19 +89,30 @@ body {
   /* Let the footer stick to the bottom if content is short */
   .portfolio-card {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
     /* The .card already has display: flex and flex-direction: column 
        due to h-100 d-flex flex-column in your HTML */
   }
   
   /* Ensure the card body has enough space to handle typical text */
   .portfolio-card .card-body {
-    min-height: 150px;   /* Adjust as needed for your text length */
+    min-height: 200px;   /* Adjust as needed for your text length */
+    /* Ensure text starts at the top, not centered */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   
   /* Subtle hover effect to unify design */
   .portfolio-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Force the footer to the bottom */
+.portfolio-card .card-footer {
+    margin-top: auto;
   }
   /* Footer */
   footer {
