@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#101414"><meta name="description" content="Explore a photomatched 3D living room. Control lighting, shades, entertainment and the fireplace by touch, keyboard or voice."><title>Living room · My Smarter Homes</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23abf1d5'/%3E%3Cpath d='m6 20 14-12 14 12M11 17v13h6v-8h6v8h6V17' fill='none' stroke='%23111a17' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E"><link rel="preload" as="image" href="./assets/living-room.webp"><link rel="stylesheet" href="./style.css"><script type="module" src="./app.js"></script>
+<link rel="canonical" href="https://www.andrewguasch.com/smart-room/">
+</head><body>
+<header class="topbar"><div class="topinner"><div class="brand"><span class="brand-mark" data-icon="logo"></span><a href="../project-room.html" style="color:inherit;text-decoration:none" aria-label="My Smarter Homes — return to The Project Room">My Smarter Homes</a></div><span class="brand-divider"></span><a class="product-name" style="color:inherit" href="../project-room.html">The Project Room</a><div class="header-actions"><button id="guideBtn" aria-label="Room guide" class="guide-btn" type="button"><span data-icon="guide"></span><span class="guide-label">Room guide</span></button><button id="voiceBtn" class="voice-btn" type="button"><span data-icon="mic"></span><span>Voice control</span></button></div></div></header>
+<main class="workspace"><div class="page-heading"><div><div class="location"><i></i> SMART HOME SHOWROOM</div><h1>Living room</h1></div><span class="context-label"><span data-icon="layers"></span><span id="currentScene">Evening scene</span></span></div>
+<div class="workspace-grid"><section class="explorer" aria-label="Room explorer"><div class="viewer-shell"><div id="viewer" class="viewer" tabindex="0" role="region" aria-label="Interactive 3D room. Drag to look around. Use W, A, S and D to walk. Home restores the reference view.">
+<div class="stage-poster"></div><canvas aria-label="Three-dimensional living room"></canvas><div class="stage-shade" aria-hidden="true"></div><div class="marker-layer" id="markers"></div>
+<div class="view-tag"><span data-icon="cube"></span><span id="renderLabel">Loading 3D</span></div>
+<div class="stage-tools"><button class="glass iconbutton fullscreen-voice" id="stageVoice" type="button" aria-label="Voice control in expanded view" title="Voice control"><span data-icon="mic"></span></button><button class="glass iconbutton" id="pinBtn" type="button" aria-label="Hide device markers" title="Hide device markers" aria-pressed="true"><span data-icon="pins"></span></button><button class="glass iconbutton" id="expandBtn" type="button" title="Expand room view" aria-label="Expand room view"><span data-icon="expand"></span></button></div>
+<div class="view-choice"><button type="button" id="cameraBtn" class="glass camera-btn" aria-expanded="false" aria-controls="cameraMenu"><span data-icon="camera"></span><span id="viewName">Reference view</span><span data-icon="chevron"></span></button><div class="view-menu" id="cameraMenu" hidden><div class="menu-label">Camera position</div><div id="viewOptions"></div></div></div>
+<div class="stage-zoom glass"><button type="button" id="zoomOut" aria-label="Zoom out" title="Zoom out"><span data-icon="minus"></span></button><span></span><button type="button" id="zoomIn" aria-label="Zoom in" title="Zoom in"><span data-icon="plus"></span></button></div>
+<div class="walk-pad" id="walkPad" role="group" aria-label="Walking controls" hidden><button data-key="w" aria-label="Walk forward"><span data-icon="up"></span></button><button data-key="a" aria-label="Step left"><span data-icon="left"></span></button><button data-key="s" aria-label="Walk backward"><span data-icon="down"></span></button><button data-key="d" aria-label="Step right"><span data-icon="right"></span></button></div>
+</div>
+<div id="voiceDockHome">
+  <dialog id="voiceDialog" aria-label="Voice control" data-layout="full">
+    <div class="dialog-inner voice-panel">
+      <div class="dialog-top voice-heading">
+        <div class="dialog-icon voice-help" data-icon="mic"></div>
+        <div class="voice-window-actions">
+          <button type="button" id="resizeVoice" class="minor-btn voice-resize" aria-label="Minimize voice control"><span data-icon="minus"></span><span class="voice-size-label">Minimize</span></button>
+          <button type="button" id="closeVoice" class="dialog-close" aria-label="Close voice control" title="Close voice control"><span data-icon="close"></span></button>
+        </div>
+      </div>
+      <div class="voice-help"><h2>Voice control</h2><p class="dialog-intro">Speak or type a command. Choose Minimize to watch the room respond.</p></div>
+      <button type="button" class="listen" id="listenBtn" aria-label="Start listening"><span data-icon="mic"></span><span class="listen-label">Start listening</span></button>
+      <div class="voice-state" id="voiceState" role="status" aria-live="polite" aria-atomic="true"></div>
+      <form class="voice-form" id="voiceForm"><input id="commandInput" aria-label="Room command" autocomplete="off" enterkeyhint="go" placeholder="Turn off the fireplace"><button class="minor-btn" type="submit">Run</button></form>
+      <div class="voice-help">
+        <h3>Try a command</h3>
+        <div class="cmd-examples"><button type="button" class="example-cmd">Dim the pendant to 30%</button><button type="button" class="example-cmd">Close the shades</button><button type="button" class="example-cmd">Movie night</button><button type="button" class="example-cmd">Play music</button><button type="button" class="example-cmd">Set the cove to mint</button><button type="button" class="example-cmd">Set the thermostat to 70</button></div>
+        <p class="voice-note">Listening starts when you press the microphone button. Your browser may send audio to its speech recognition service.</p>
+      </div>
+    </div>
+  </dialog>
+</div>
+<div class="navigation-bar"><div class="nav-hints"><span><i data-icon="mouse"></i>Drag to look</span><span class="key-hint"><i data-icon="keyboard"></i>WASD to move</span><span class="touch-hint"><i data-icon="move"></i>Pinch to zoom</span></div><button id="walkBtn" type="button" aria-expanded="false" aria-controls="walkPad"><span data-icon="navigation"></span>Walk controls</button></div></div>
+<section class="scenes" aria-labelledby="scenesTitle"><div class="section-title"><h2 id="scenesTitle">Room scenes</h2><span>Set the whole room in one tap</span></div><div id="sceneCards" class="scene-grid"></div></section>
+</section>
+<aside class="controls" id="controls" aria-labelledby="controlsTitle"><div class="panel-top"><div class="panel-icon" data-icon="sliders"></div><div><h2 id="controlsTitle">Device controls</h2><p id="deviceSummary">9 room devices</p></div></div><div class="filter-row" id="filters" aria-label="Filter devices"></div><div class="device-list" id="deviceList"></div><div class="panel-foot"><span class="foot-dot"></span><span id="powerSummary">Room ready</span></div></aside></div></main>
+<dialog id="dialog"><div class="dialog-inner"><div class="dialog-top"><div class="dialog-icon" id="dialogIcon"></div><button id="closeDialog" type="button" class="dialog-close" aria-label="Close"><span data-icon="close"></span></button></div><div id="dialogBody"></div></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div><noscript>JavaScript is required for interactive room controls.</noscript></body></html>

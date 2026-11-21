@@ -4,3 +4,5 @@ migrations/
 
 *.png
 images/
+# The smart room uses these precomputed lighting and depth maps.
+!public/smart-room/assets/*.png

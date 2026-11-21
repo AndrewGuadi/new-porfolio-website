@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#e4dfd6">
+<title>Pocket Session · Andrew Guasch</title>
+<style>
+:root{color-scheme:light;--paper:#efece5;--metal:#e2ded4;--ink:#252923;--muted:#51584e;--rust:#a63c20;--terr:#ea885d;--line:#a3a198;--green:#c9e57b;--mono:ui-monospace,SFMono-Regular,Consolas,monospace;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper)}
+*{box-sizing:border-box}body{margin:0}button,select,input{font:inherit}button,select{cursor:pointer}button{border-radius:5px;color:inherit;border:1px solid #8e9287;background:#eeece5;min-height:41px;padding:.56rem .85rem;font-weight:700;box-shadow:0 2px 0 #b1ada3}button:hover{background:#fffdf6}button:active{transform:translateY(1px);box-shadow:none}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #0064b2;outline-offset:3px}button:disabled{cursor:wait;opacity:.65}select{border:1px solid #8b8e83;border-radius:4px;color:var(--ink);background:#efede5;padding:.53rem;min-height:40px}a{color:inherit}
+main{max-width:1120px;margin:0 auto;padding:clamp(20px,5vw,75px) clamp(14px,4vw,45px) 48px}.head{display:flex;align-items:end;justify-content:space-between;gap:1.5rem;margin-bottom:26px}h1{font:800 clamp(3.2rem,8.1vw,6.8rem)/.94 Arial,Helvetica,sans-serif;letter-spacing:-.085em;margin:0}h1 i{font-family:Georgia,serif;font-weight:400}h1 i::after{content:'.';color:var(--rust)}.head p{font-size:1rem;line-height:1.4;max-width:22rem;margin:.4rem 0 .1rem}
+.unit{background:linear-gradient(115deg,#e6e2d9,#d4d0c6);border:1px solid #919487;border-radius:15px;padding:clamp(17px,3vw,34px);box-shadow:inset 1px 2px 1px #fff9,inset -2px -2px 2px #b6b2a9,0 6px 0 #c3bfb5,0 8px 0 #96998d}.zone{display:grid;grid-template-columns:1.02fr 1fr;gap:clamp(18px,3vw,36px)}.screen{background:#212a23;color:#e7eed5;border-radius:6px;padding:16px 18px 12px;box-shadow:inset 0 2px 6px #0d140d80;min-width:0;display:flex;flex-direction:column;justify-content:space-between}.readout,.buttonrow,.settings,.lane,.buttons,.sectionhead,.pair,.sectionaux{display:flex;align-items:center;gap:10px}.readout,.sectionhead,.sectionaux{justify-content:space-between}.readout{font:11px var(--mono);letter-spacing:.07em;color:#d4dac9;text-transform:uppercase}.dot{width:8px;height:8px;display:inline-block;border-radius:50%;background:#78816f;margin-right:6px}.dot.on{background:var(--green)}.screen h2{font-family:Georgia,serif;font-size:clamp(1.8rem,3.6vw,3.3rem);letter-spacing:-.045em;font-weight:400;line-height:1.1;margin:.4rem 0}canvas{display:block;width:100%;height:46px}.settings{flex-wrap:wrap;align-items:end;gap:12px}.settings label{display:flex;flex-direction:column;gap:5px;font:700 11px var(--mono);letter-spacing:.045em;text-transform:uppercase;color:var(--muted)}.settings select{font:700 14px Arial,sans-serif;text-transform:none;letter-spacing:0}.sliders{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:16px 0}.sliders label{font:700 12px var(--mono);display:flex;align-items:center;justify-content:space-between}.sliders output{font:12px var(--mono);color:var(--muted)}input[type=range]{width:100%;margin:6px 0;accent-color:var(--rust);cursor:pointer}.transport{background:var(--rust);color:#fff8eb;border-color:#863419;box-shadow:0 2px 0 #713220;min-width:98px}.transport:hover{background:#8d3018}.transport span{display:inline-block;width:1.2em}.buttonrow{flex-wrap:wrap}.divider{border-top:1px solid #9fa295;box-shadow:0 1px 0 #fff6;margin:24px 0 17px}.sectionhead{align-items:baseline}.sectionhead h2,.lab h2{margin:0;font:700 1.25rem/1.2 Arial,sans-serif;letter-spacing:-.04em}.sectionhead small{font:11px var(--mono);color:var(--muted)}.lanes{margin-top:13px;display:grid;gap:7px}.lane{--color:var(--terr);align-items:stretch;gap:8px}.lane>strong{font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.04em;display:flex;align-items:center;width:45px;flex-shrink:0}.pads{display:grid;grid-template-columns:repeat(16,minmax(0,1fr));gap:4px;flex:1}.pad{position:relative;border-radius:4px;min-height:36px;padding:0;border:1px solid #97998d;box-shadow:inset 0 1px 1px #fffd,0 1px 0 #9e9d93;background:#eae7df}.pad:nth-child(4n+1){border-left:2px solid #6c7165;background:#dcd9cf}.pad[aria-pressed=true]{background:var(--color);border-color:#656c56;box-shadow:inset 0 1px 1px #fff6,0 1px 0 #7d806f}.pad[aria-pressed=true]:after{content:'';position:absolute;top:50%;left:50%;margin:-2px;width:4px;height:4px;border-radius:50%;background:#272b24}.pad.current{outline:2px solid #272b24;outline-offset:-3px}.lane:nth-child(2){--color:#f2bc7b}.lane:nth-child(3){--color:#c6d99b}.lane:nth-child(4){--color:#bdc6e2}.lane:nth-child(5){--color:#d8b9d6}.hint,.lab p{font-size:.88rem;line-height:1.45;color:var(--muted);margin:.65rem 0 0}.lab{margin-top:28px;display:grid;grid-template-columns:.95fr 1.25fr;gap:22px;padding:20px 0;border-bottom:1px solid #adaca1}.lab h2{font-size:1.5rem}.pair{gap:8px;flex-wrap:wrap}.pair[hidden]{display:none}.pair button[aria-pressed=true]{background:#30372d;color:#f3f5ec}.learn-action{background:#d7e4aa}.lab .msg{margin-top:.45rem;font:12px/1.5 var(--mono)}.export-status{font-size:.8rem;min-height:1em;color:var(--muted);margin:.4rem 0 0}.smallhint{display:none}@media(max-width:720px){.head{align-items:start;flex-direction:column;gap:8px}.head p{max-width:100%}.zone{grid-template-columns:1fr}.sliders{margin:12px 0}.lab{grid-template-columns:1fr;gap:14px}.pads{grid-template-columns:repeat(8,minmax(0,1fr))}.pad{min-height:36px}.lane{gap:7px}.lanes{gap:11px}.lane>strong{width:38px}.smallhint{display:inline}.widehint{display:none}.unit{padding:15px}.divider{margin:18px 0 14px}}@media(max-width:380px){.lane{display:block}.lane>strong{margin:0 0 4px}.readout{font-size:10px}.settings{gap:8px}.pad{min-height:32px}}@media(prefers-reduced-motion:reduce){button:active{transform:none}}
+</style>
+<meta name="description" content="Build a 16-step loop, teach an on-device model your rhythm preferences and export your music as a WAV."><style>.project-return{box-sizing:border-box;background:#18191a;color:#f4f4eb;padding:9px clamp(16px,4vw,64px);font:500 13px/1.4 system-ui,sans-serif;letter-spacing:.01em;text-align:left;display:flex;gap:9px;align-items:center}.project-return a{color:inherit;text-decoration:underline;text-underline-offset:3px}.project-return a:focus-visible{outline:3px solid #ffb64c}.project-return span{color:#d8d8d4}@media print{.project-return{display:none}}</style><link rel="canonical" href="https://www.andrewguasch.com/pocket-session.html">
+</head>
+<body><nav class="project-return" aria-label="Project navigation"><a href="project-room.html">The Project Room</a><span> / </span><a href="./">Andrew Guasch</a></nav><main>
+<header class="head"><h1>Pocket <i>Session</i></h1><p>Make a loop by ear. Start with a groove, tap the pads to change it, and take the audio with you.</p></header>
+<section class="unit" aria-label="Loop instrument">
+<div class="zone"><div class="screen"><div class="readout"><span><span class="dot" id="dot"></span><span id="state">Stopped</span></span><span>1 bar · 4/4</span></div><h2 id="displayName">Night drive</h2><canvas aria-hidden="true" id="pattern"></canvas></div>
+<div><div class="settings"><label>Starting groove<select id="preset"><option value="0">Night drive</option><option value="1">Sunday morning</option><option value="2">After hours</option></select></label><label>Root note<select id="root"><option value="48">C</option><option value="50" selected>D</option><option value="52">E</option><option value="53">F</option><option value="55">G</option><option value="57">A</option></select></label></div>
+<div class="sliders"><div><label for="tempo">Tempo <output id="bpm"></output></label><input id="tempo" type="range" min="65" max="155" value="98"></div><div><label for="swing">Swing <output id="sw"></output></label><input id="swing" type="range" min="0" max="55" value="16"></div></div>
+<div class="buttonrow"><button id="play" class="transport"><span aria-hidden="true">▶</span> Play</button><button id="export">Export WAV ↓</button></div><div id="exportStatus" role="status" class="export-status"></div></div></div>
+<div class="divider"></div><div class="sectionhead"><h2>Step editor</h2><small>16 steps</small></div><div class="lanes" id="lanes"></div>
+<p class="hint"><span class="widehint">Steps run left to right.</span><span class="smallhint">Each instrument wraps after step 8.</span> Tap a pad to toggle it. Use arrow keys to move between pads.</p></section>
+<section class="lab" aria-labelledby="earTitle"><div><h2 id="earTitle">Teach it your taste.</h2><p>Hear two variations and pick a favorite. A small model learns your rhythmic preferences from your choices in this session. Everything runs on this device.</p></div><div><button id="compare" class="learn-action">Create two variations</button><div id="pair" class="pair" hidden><button id="hearA" aria-pressed="false">Hear A</button><button id="hearB" aria-pressed="false">Hear B</button><button id="keep" class="learn-action" disabled>Keep this take</button><button id="cancel">Cancel</button></div><p id="learnStatus" role="status" class="msg"></p></div></section>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const names=['Kick','Clap','Hat','Bass','Keys'];
+const grooves=[
+ {name:'Night drive',tempo:98,swing:16,root:50,patterns:['1000001010000010','0000100000001000','1010101010101010','1000001000100100','0001000000010010']},
+ {name:'Sunday morning',tempo:78,swing:35,root:53,patterns:['1000000010010000','0000100000001000','1010001010100010','1000010000100000','1000000100001000']},
+ {name:'After hours',tempo:124,swing:8,root:48,patterns:['1000100010001000','0000100000001000','0010001000101011','0010010000100100','0001000100010001']}
+];
+let bank=0,root=50,tempo=98,swing=16,grid=[],title='';
+let audio=null,bus=null,timer=null,nextTime=0,step=0,lastShown=-1,playGeneration=0,playing=false,queue=[];
+let pair=null,heard=new Set(),choice=-1,weights=[0,0,0,0],picks=0;
+const padButtons=[];
+function clone(g){return g.map(row=>row.slice())}
+function chooseBank(index){
+ bank=index;const g=grooves[bank];root=g.root;tempo=g.tempo;swing=g.swing;title=g.name;grid=g.patterns.map(row=>Array.from(row,Number));updateControls();endPair('');update();storeLoop();
+}
+function updateControls(){$('preset').value=bank;$('root').value=root;$('tempo').value=tempo;$('swing').value=swing;$('bpm').value=tempo+' bpm';$('sw').value=swing+'%'}
+function storeLoop(){try{localStorage.setItem('pocket-session-loop-v1',JSON.stringify({bank,root,tempo,swing,grid,title}))}catch{}}
+function restore(){try{const s=JSON.parse(localStorage.getItem('pocket-session-loop-v1'));if(s&&Number.isInteger(s.bank)&&grooves[s.bank]&&[48,50,52,53,55,57].includes(s.root)&&Number.isInteger(s.tempo)&&s.tempo>=65&&s.tempo<=155&&Number.isInteger(s.swing)&&s.swing>=0&&s.swing<=55&&s.grid?.length===5&&s.grid.every(r=>Array.isArray(r)&&r.length===16&&r.every(v=>v===0||v===1))){bank=s.bank;root=s.root;tempo=s.tempo;swing=s.swing;grid=s.grid;title=grooves[bank].name;updateControls();return true}}catch{}return false}
+function shown(){return pair&&choice>=0?pair[choice]:grid}
+function update(){
+ const g=shown();$('displayName').textContent=title+(pair&&choice>=0?' · '+('AB'[choice]):'');
+ for(let t=0;t<5;t++)for(let j=0;j<16;j++)padButtons[t][j].setAttribute('aria-pressed',String(!!g[t][j]));
+ draw();
+}
+function draw(){
+ const c=$('pattern'),b=c.getBoundingClientRect(),scale=Math.min(window.devicePixelRatio||1,2);if(!b.width)return;c.width=Math.round(b.width*scale);c.height=Math.round(b.height*scale);
+ const ctx=c.getContext('2d');ctx.scale(scale,scale);let w=b.width/16;const g=shown();
+ for(let i=0;i<16;i++){let total=0;for(let r=0;r<5;r++)total+=g[r][i];ctx.fillStyle=i===lastShown?'#efffba':'#9eb68a';for(let k=0;k<total+1;k++){ctx.fillRect(i*w,b.height-(k+1)*6,Math.max(w-3,1),4)}}
+}
+function setupGrid(){
+ const container=$('lanes');
+ names.forEach((name,t)=>{let lane=document.createElement('div');lane.className='lane';let label=document.createElement('strong');label.textContent=name;let pads=document.createElement('div');pads.className='pads';pads.setAttribute('role','group');pads.setAttribute('aria-label',name+' steps');padButtons[t]=[];
+ for(let j=0;j<16;j++){
+ const pad=document.createElement('button');pad.type='button';pad.className='pad';pad.setAttribute('aria-label',name+', step '+(j+1));pad.title=name+' · step '+(j+1);pad.tabIndex=j===0?0:-1;
+ pad.onclick=()=>{if(pair){const selected=shown();grid=clone(selected);endPair('Switched to manual editing.')}grid[t][j]=1-grid[t][j];storeLoop();update()};
+ pad.onkeydown=e=>{const ds={ArrowLeft:[0,-1],ArrowRight:[0,1],ArrowUp:[-1,0],ArrowDown:[1,0]};if(!ds[e.key])return;e.preventDefault();const [a,b]=ds[e.key];padButtons[(t+a+5)%5][(j+b+16)%16].focus()};
+ pad.onfocus=()=>{for(let x of padButtons[t])x.tabIndex=-1;pad.tabIndex=0};padButtons[t].push(pad);pads.append(pad)}
+ lane.append(label,pads);container.append(lane)});
+}
+function rand(seed){let x=seed>>>0;return ()=>{x=(Math.imul(1664525,x)+1013904223)>>>0;return x/4294967296}}
+function makeBus(ctx){
+ const out=ctx.createGain();out.gain.value=.72;const comp=ctx.createDynamicsCompressor();comp.threshold.value=-15;comp.ratio.value=5;out.connect(comp);comp.connect(ctx.destination);
+ let length=Math.ceil(ctx.sampleRate*.2),noise=ctx.createBuffer(1,length,ctx.sampleRate),d=noise.getChannelData(0),random=rand(6448);for(let i=0;i<length;i++)d[i]=random()*2-1;
+ return {ctx,out,comp,noise}
+}
+function tone(b,at,type,hz,duration,amp,endHz=0,cutoff=0){
+ const {ctx,out}=b,o=ctx.createOscillator(),env=ctx.createGain();o.type=type;o.frequency.setValueAtTime(hz,at);if(endHz)o.frequency.exponentialRampToValueAtTime(endHz,at+duration*.75);
+ env.gain.setValueAtTime(.0001,at);env.gain.exponentialRampToValueAtTime(amp,at+.006);env.gain.exponentialRampToValueAtTime(.0001,at+duration);
+ let f;if(cutoff){f=ctx.createBiquadFilter();f.type='lowpass';f.frequency.value=cutoff;o.connect(f);f.connect(env)}else o.connect(env);env.connect(out);o.start(at);o.stop(at+duration+.006);o.onended=()=>{o.disconnect();env.disconnect();if(f)f.disconnect()}
+}
+function noiseHit(b,at,filter,hz,duration,amp){
+ const {ctx,noise,out}=b,o=ctx.createBufferSource(),f=ctx.createBiquadFilter(),env=ctx.createGain();o.buffer=noise;f.type=filter;f.frequency.value=hz;env.gain.setValueAtTime(.0001,at);env.gain.exponentialRampToValueAtTime(amp,at+.003);env.gain.exponentialRampToValueAtTime(.0001,at+duration);o.connect(f);f.connect(env);env.connect(out);o.start(at);o.stop(at+duration+.005);o.onended=()=>{o.disconnect();f.disconnect();env.disconnect()}
+}
+const hz=m=>440*2**((m-69)/12);
+function soundStep(b,g,i,at,pitch,speed){
+ const length=60/speed/4;
+ if(g[0][i]){tone(b,at,'sine',130,.21,.8,42);noiseHit(b,at,'lowpass',1200,.025,.07)}
+ if(g[1][i]){noiseHit(b,at,'bandpass',1800,.145,.59);noiseHit(b,at+.015,'highpass',1200,.085,.21);tone(b,at,'triangle',178,.07,.1,145)}
+ if(g[2][i])noiseHit(b,at,'highpass',6900,i%4===2?.107:.057,i%2?.21:.34);
+ const motion=[0,0,7,3,0,7,10,7,-2,0,3,7,-5,7,3,-2];if(g[3][i])tone(b,at,'triangle',hz(pitch-12+motion[i]),length*1.8,.37,0,650);
+ if(g[4][i]){const chord=(i<8?[0,3,7]:[-2,3,7]);chord.forEach((n,k)=>tone(b,at+k*.006,'triangle',hz(pitch+12+n),length*2.75,.09,0,2100))}
+}
+function clearHead(){if(lastShown>=0)for(const row of padButtons)row[lastShown].classList.remove('current');lastShown=-1;draw()}
+function stop(){playGeneration++;playing=false;clearInterval(timer);timer=null;queue=[];if(bus){bus.out.disconnect();bus.comp.disconnect();bus=null}clearHead();$('play').innerHTML='<span aria-hidden="true">▶</span> Play';$('state').textContent='Stopped';$('dot').classList.remove('on')}
+async function play(){
+ const id=++playGeneration;try{
+ if(!audio)audio=new (window.AudioContext||window.webkitAudioContext)();await audio.resume();if(id!==playGeneration)return;
+ if(bus){bus.out.disconnect();bus.comp.disconnect()}clearInterval(timer);bus=makeBus(audio);step=0;queue=[];nextTime=audio.currentTime+.038;playing=true;
+ $('play').innerHTML='<span aria-hidden="true">■</span> Stop';$('state').textContent='Playing';$('dot').classList.add('on');
+ const tick=()=>{
+ const now=audio.currentTime,stepTime=60/tempo/4;
+ if(nextTime<now-.12){nextTime=now+.02;step=0;queue=[]}
+ while(nextTime<now+.13){const at=nextTime+(step%2?stepTime*swing/100:0);soundStep(bus,shown(),step,at,root,tempo);queue.push([step,at]);step=(step+1)%16;nextTime+=stepTime}
+ let latest=-1;while(queue.length&&queue[0][1]<=now)latest=queue.shift()[0];if(latest>=0&&latest!==lastShown){if(lastShown>=0)for(const row of padButtons)row[lastShown].classList.remove('current');lastShown=latest;for(const row of padButtons)row[lastShown].classList.add('current');draw()}
+ };tick();timer=setInterval(tick,25);
+ }catch{stop();$('exportStatus').textContent='Audio playback is unavailable in this browser.'}
+}
+function endPair(msg){pair=null;choice=-1;heard=new Set();$('pair').hidden=true;$('compare').hidden=false;$('keep').disabled=true;$('learnStatus').textContent=msg}
+function features(g){let total=0,off=0,drums=0,melody=0,upbeat=0;for(let t=0;t<5;t++)for(let j=0;j<16;j++){if(!g[t][j])continue;total++;if(j%2)off++;if(t<=2)drums++;else melody++;if(j%4===2)upbeat++}return [total/80,off/Math.max(1,total),melody/Math.max(1,total),upbeat/Math.max(1,total)]}
+const dot=(a,b)=>a.reduce((v,k,i)=>v+k*b[i],0);
+function mutate(base){
+ const next=clone(base);for(let t=0;t<5;t++){const count=1+Math.floor(Math.random()*4);for(let n=0;n<count;n++){const j=Math.floor(Math.random()*16);if(t===0&&j===0)continue;next[t][j]=1-next[t][j]}}
+ return next
+}
+function buildPair(){
+ let pool=Array.from({length:28},()=>mutate(grid));if(picks)pool.sort((a,b)=>dot(weights,features(b))-dot(weights,features(a)));
+ const first=pool[0],f=features(first);
+ const distinct=pool.slice(1).sort((a,b)=>distance(b)-distance(a));function distance(g){return features(g).reduce((sum,k,i)=>sum+(k-f[i])**2,0)}
+ pair=[first,distinct[Math.floor(Math.random()*5)]];if(Math.random()<.5)pair.reverse();choice=-1;heard=new Set();$('compare').hidden=true;$('pair').hidden=false;$('keep').disabled=true;$('hearA').setAttribute('aria-pressed','false');$('hearB').setAttribute('aria-pressed','false');$('learnStatus').textContent=picks?'Two new takes, shaped by your earlier choices.':'Hear both takes, then keep the one you like.';update()
+}
+function audition(i){if(!pair)return;choice=i;heard.add(i);$('hearA').setAttribute('aria-pressed',String(i===0));$('hearB').setAttribute('aria-pressed',String(i===1));$('keep').disabled=heard.size<2;$('keep').textContent='Keep '+('AB'[i]);update();play()}
+function prefer(winner,other){
+ let d=features(winner).map((n,i)=>n-features(other)[i]);const prob=1/(1+Math.exp(-dot(weights,d)));weights=weights.map((w,i)=>.99*w+3*(1-prob)*d[i]);picks++
+}
+function keep(){if(!pair||choice<0||heard.size<2)return;prefer(pair[choice],pair[1-choice]);grid=clone(pair[choice]);endPair('Take saved. '+picks+(picks===1?' preference':' preferences')+' learned this session.');storeLoop();update();$('compare').focus()}
+function wav(ch,sr){const b=new ArrayBuffer(44+ch.length*2),v=new DataView(b);const s=(i,t)=>{for(let j=0;j<t.length;j++)v.setUint8(i+j,t.charCodeAt(j))};s(0,'RIFF');v.setUint32(4,36+ch.length*2,true);s(8,'WAVE');s(12,'fmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);v.setUint32(24,sr,true);v.setUint32(28,sr*2,true);v.setUint16(32,2,true);v.setUint16(34,16,true);s(36,'data');v.setUint32(40,ch.length*2,true);for(let i=0;i<ch.length;i++){const x=Math.max(-1,Math.min(1,ch[i]));v.setInt16(44+i*2,Math.round(x*(x<0?32768:32767)),true)}return b}
+async function exportWav(){
+ const btn=$('export');btn.disabled=true;$('exportStatus').textContent='Rendering your loop…';try{const sr=44100,duration=60/tempo*4,frames=Math.round(sr*duration),ctx=new (window.OfflineAudioContext||window.webkitOfflineAudioContext)(1,frames*2,sr),b=makeBus(ctx);const dur=frames/sr,stepLength=dur/16;const name=grooves[bank].name.toLowerCase().replaceAll(' ','-')+'-'+tempo+'bpm.wav';for(let j=0;j<32;j++){let i=j%16;soundStep(b,shown(),i,stepLength*(j+(i%2?swing/100:0)),root,tempo)}const rendered=await ctx.startRendering();const url=URL.createObjectURL(new Blob([wav(rendered.getChannelData(0).subarray(frames),sr)],{type:'audio/wav'}));const a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);$('exportStatus').textContent='Exported '+name}catch{$('exportStatus').textContent='Audio export could not finish in this browser.'}finally{btn.disabled=false}
+}
+setupGrid();if(!restore())chooseBank(0);update();window.addEventListener('resize',draw);
+$('preset').onchange=e=>{const go=playing;stop();chooseBank(Number(e.target.value));if(go)play()};
+$('root').onchange=e=>{root=Number(e.target.value);storeLoop()};
+$('tempo').oninput=e=>{tempo=Number(e.target.value);updateControls();storeLoop()};
+$('swing').oninput=e=>{swing=Number(e.target.value);updateControls();storeLoop()};
+$('play').onclick=()=>playing?stop():play();$('export').onclick=exportWav;$('compare').onclick=buildPair;$('hearA').onclick=()=>audition(0);$('hearB').onclick=()=>audition(1);$('keep').onclick=keep;$('cancel').onclick=()=>{stop();endPair('Original loop restored.');update();$('compare').focus()};
+window.addEventListener('pagehide',stop);
+</script></body></html>
